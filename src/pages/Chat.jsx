@@ -3,8 +3,9 @@ import MessageBox from "../components/MessageBox";
 import PrevButton from "../components/PrevButton";
 import { MoonLoader } from "react-spinners";
 
-const Chat = () => {
+const Chat = (ingredientList) => {
   // logic
+  console.log(ingredientList);
 
   const [value, setValue] = useState("");
 
