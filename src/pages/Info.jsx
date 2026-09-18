@@ -13,7 +13,7 @@ const Info = ({ sendIngredientList }) => {
   const [ingredientList, setIngredientList] = useState([]); // 사용자가 입력할 재료 목록
 
   const addIngredient = () => {
-    console.log("재료 추가하기");
+    // console.log("재료 추가하기");
     const id = Date.now();
     const newItem = {
       id,
@@ -34,11 +34,12 @@ const Info = ({ sendIngredientList }) => {
       (item) => item.value.trim() !== "",
     );
 
-    console.log("🚀filterDataList:", filterDataList);
+    // console.log("🚀filterDataList:", filterDataList);
 
     if (filterDataList.length) {
       // 재료 입력값이 있는 경우
       sendIngredientList(ingredientList);
+      console.log("🚀 ~ handleNext ~ ingredientList:", ingredientList);
       history("/chat");
       return;
     }
@@ -70,15 +71,12 @@ const Info = ({ sendIngredientList }) => {
 
     setIngredientList(filterIngredientList);
 
-    console.log(
-      "🚀 ~ handleRemove ~ filterIngredientList:",
-      filterIngredientList,
-    );
+    // console.log(      "🚀 ~ handleRemove ~ filterIngredientList:",      filterIngredientList,    );
   };
 
   //state변경 일어나면 실행
   useEffect(() => {
-    console.log("ingredientList", ingredientList);
+    //console.log("ingredientList", ingredientList);
   }, [ingredientList]);
 
   // view

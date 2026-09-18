@@ -16,7 +16,7 @@ function App() {
           <Info sendIngredientList={(data) => setIngredientList(data)} />
         }
       />
-      <Route path="/chat" element={<Chat data={ingredientList} />} />
+      <Route path="/chat" element={<Chat ingredientList={ingredientList} />} />
     </Routes>
   );
 }
